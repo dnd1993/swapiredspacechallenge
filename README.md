@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Submission Notes
+The Star Wars app allows users to view the detailed information of all the people, movies, and planets listed by [Swapi API](https://swapi.dev/).
+Deployed on [Netlify](https://yanaswapiredspace.netlify.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
+## Install instructions
 In the project directory, you can run:
+```
+npm start
+```
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-### `npm start`
+## Approach to the problem
+[Swapi API](https://swapi.dev/) returns 10 items per page by default, and using simple and intuitive ‘Previous Page’ and ‘Next Page’ buttons allows the user to jump between pages, traversing the entire list. Further details about each item can be accessed by clicking on its name, which appears in the list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technical decisions
+- The React Router v6 (including the newest features such as nested routes, outlet, navLink, etc.) is used to create an SPA for more efficient performance and a better user experience.
+- Functional Components with various Hooks are used over Class Components as they are concise and result in more straightforward code.
+- Redux Toolkit was chosen for state management because it is easier to configure and doesn't require too much boilerplate code.
+- Presentational components are broken down into micro components to make them reusable across the project and to allow for making changes in the UI with ease.
+- The data in the single item view comes from a separate API call (rather than passing data from the home page) in order to provide the user with a unique, functional and shareable link.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Possible changes
+- Implement a responsive design and style the app further.
+- Create separate CSS files for certain components. Use more Material UI props instead of inline styles.
+- Add a Loading Component to display while awaiting the response from an API call.
+- Add 'Back" buttons on the individual Person/Movie/Planet item views to return to the People/Movies/Planets (list) views respectively.
+- Add error handlers (for e.g. for a bad request).
+- Create more containers that group micro components and can be reused (for e.g. grouping the 'previous page' and 'next page' buttons)
+- Handle pending and rejected states in redux store slices. 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Learning resources
+1. https://reactjs.org/docs
+2. https://www.youtube.com/freecodecamp
+3. https://developer.mozilla.org/en-US/
+4. https://www.typescriptlang.org/docs/
+5. https://redux-toolkit.js.org/
+6. https://reactrouter.com/docs/en/v6
